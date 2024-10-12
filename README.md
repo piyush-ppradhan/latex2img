@@ -16,7 +16,7 @@ cmake .. && make
 ## Usage Instructions
 ```bash
 # If the latex expression is defined in a file
-latex2img -font_size 12 -baselineskip 16 -bg "#000000" -fg "#111111" -file filename -output "output_name" -border 2
+latex2img -font_size 12 -baselineskip 16 -bg "#000000" -fg "#111111" -file "filename" -output "output_name" -border 2
 # If the expression is simple enough, it is more convenient to pass it as a string
 latex2img -font_size 12 -baselineskip 16 -bg "#000000" -fg "#111111" -string "$\alpha = 2$" -output "output_name" -border 2
 ```
