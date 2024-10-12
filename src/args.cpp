@@ -3,16 +3,18 @@
 #include <fstream>
 #include <sstream>
 
-const int n_arguments = 5;
+const int n_arguments = 6;
 const std::string valid_args[n_arguments]= {
 	"-bg",
 	"-fg",
 	"-font_size",
 	"-border",
 	"-baselineskip",
+	"-preview"
 };
 
-Args::Args(int font_size, int border, int baselineskip, std::string fg, std::string bg, std::string latex_exp, std::string fname) {
+Args::Args(bool preview, int font_size, int border, int baselineskip, std::string fg, std::string bg, std::string latex_exp, std::string fname) {
+	this->preview = preview;
 	this->font_size = font_size;
 	this->border = border;
 	this->baselineskip = baselineskip;
@@ -52,6 +54,8 @@ Args set_args(int argc, char* argv[]) {
 	// Default values
 	int font_size = 12, border_size = 0, baselineskip=0;
 	std::string fg = "#000000", bg = "#ffffff", latex_exp = "", fname="generated_expression";
+	bool preview = false;
+
 	bool baselineskip_set = false;
 
 	// Get font size, foreground & background color
@@ -80,6 +84,10 @@ Args set_args(int argc, char* argv[]) {
 				case 4: {
 					baselineskip = std::atoi(argv[i+1]);
 					baselineskip_set = true;
+					break;
+				}
+				case 5: {
+					preview = std::atoi(argv[i+1]);
 					break;
 				}
 			}
@@ -111,5 +119,5 @@ Args set_args(int argc, char* argv[]) {
 	if (res1 != -1) {
 		fname = std::string(argv[res1]);
 	}
-	return Args(font_size, border_size, baselineskip, fg, bg, latex_exp, fname);
+	return Args(preview, font_size, border_size, baselineskip, fg, bg, latex_exp, fname);
 }

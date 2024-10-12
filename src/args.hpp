@@ -10,11 +10,12 @@ class Args {
 		int font_size;
 		int border;
 		int baselineskip;
+		bool preview;
 		std::string fg;
 		std::string bg;
 		std::string latex_exp;
 		std::string output_fname;
-		Args(int font_size, int border, int baselineskip, std::string fg, std::string bg, std::string latex_exp, std::string fname);
+		Args(bool preview, int font_size, int border, int baselineskip, std::string fg, std::string bg, std::string latex_exp, std::string fname);
 };
 
 std::string read_file(std::string filename);
