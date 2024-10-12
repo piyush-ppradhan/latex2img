@@ -1,6 +1,6 @@
-#include <iostream>
+#include "latex2img.hpp"
 
 int main(int argc, char* argv[]) {
-	std::cout << "Hello, World!";
+	latex2img(argc, argv);
 	return 0;
 }
