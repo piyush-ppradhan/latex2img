@@ -1,5 +1,5 @@
 # latex2img
-latex2img is a simple tool to generate an image from latex expression, which can be easily embedded in presentations.
+**latex2img** is a simple tool to generate an image from latex expression, which can be easily embedded in presentations.
 
 ## Dependencies
 - A C++ compiler.
@@ -27,9 +27,9 @@ latex2img -font_size 12 -baselineskip 16 -bg "#000000" -fg "#111111" -string "$\
 - The tool generates pdf files, which can be converted to any image format.
 
 ## Default Values
-- `font_size`: 12
-- `baselineskip`: `font_size` + 4
-- `bg`: "#ffffff"
-- `fg`: "#000000"
-- `border`: 0
-- `output`: `generated_expression`. This is the filename prefix for all files generated.
+- `font_size`: **12**
+- `baselineskip`: **font_size + 4**
+- `bg`: **"#ffffff"**
+- `fg`: **"#000000"**
+- `border`: **0**
+- `output`: **generated_expression**. This is the filename prefix for all files generated.
