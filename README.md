@@ -22,7 +22,7 @@ latex2img -font_size 12 -baselineskip 16 -bg "#000000" -fg "#111111" -file "file
 latex2img -font_size 12 -baselineskip 16 -bg "#000000" -fg "#111111" -string "$\alpha = 2$" \
 -output "output_name" -border 2 -preview 0
 ```
-- Numeric values such as `font_size`, `baselineskip` and `border` are defined in units of `pt`
+- `font_size`, `baselineskip` are defined in units of `pt` while `border` is defined in `cm`.
 - `filename` must contain valid latex expression.
 - If the binary and the file are not in same directory, the `filename` must include the fullpath.
 - `output_name` must not include the file extension.

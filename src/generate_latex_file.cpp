@@ -11,13 +11,15 @@ void generate_tex_file(Args args) {
 		std::cerr << "Cannot create file: " << args.output_fname << ".tex \n";
 		exit(1);
 	}
+
 	if (!args.preview) {
-		line = "\\documentclass[border=" + std::to_string(args.border);
+		line = "\\documentclass";
 	}
 	else {
-		line = "\\documentclass[preview, border=" + std::to_string(args.border);
+		line = "\\documentclass[preview]";
 	}
-	line = line + "pt]{standalone}\n\\usepackage{xcolor, amsmath}\n";
+	line = line + "{standalone}\n\\usepackage{xcolor, amsmath}\n\\standaloneconfig{margin=" + std::to_string(args.border) + "cm}\n";
+
 	line = line + "\\definecolor{fg}{HTML}{" + args.fg.substr(1) + "}\n";
 	line = line + "\\definecolor{bg}{HTML}{" + args.bg.substr(1) + "}\n";
 	line = line + "\\begin{document}\n";
